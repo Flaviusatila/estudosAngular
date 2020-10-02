@@ -1,0 +1,12 @@
+<h2>Adicionar cursos</h2>
+
+<input type="text" #cursoInput >
+<button (click)="onAddCurso(cursoInput.value)">Adicionar Curso</button>
+
+<ul>
+    <li *ngFor="let curso of cursos">
+        {{ curso }}
+    </li>
+</ul>
+
+<app-recebe-curso></app-recebe-curso>

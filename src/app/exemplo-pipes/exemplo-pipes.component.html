@@ -1,0 +1,25 @@
+<h1>Informações do livro</h1>
+<p>Titulo: {{ livro.titulo | camelCase }} </p> 
+<p>Rating: {{ livro.rating | number:'1.1-2' }}</p>
+<p>Numero Pagina: {{ livro.numeroPaginas | number }}</p>
+<p>Preço: {{ livro.preco | currency:'BRL':true }}</p>
+<p>Data lançamento: {{ livro.dataLancamento | date:'dd-MM-yy'}}</p>
+<p>Mais Informações: <a [href]="livro.url">clique aqui para saber mais</a></p>
+<br>
+<p>Livro: {{ livro | json }}</p>
+<br>
+<h2>Lista de livros</h2>
+<ul>
+    <!-- | filtroArray:'ngu' -->
+    <li *ngFor= "let liv of livros "> 
+        {{ liv }}
+    </li>
+</ul>
+
+<h2>Maneira correta de usar filtro nos projetos</h2>
+
+<ul>
+    <li *ngFor="let liv1 of obterCursos()">
+        {{ liv1 }}
+    </li>
+</ul>
